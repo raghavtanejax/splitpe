@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 import '../services/upi_validator.dart';
 import '../theme/app_theme.dart';
 
@@ -12,12 +11,7 @@ class QrScannerView extends StatefulWidget {
 
 class _QrScannerViewState extends State<QrScannerView>
     with SingleTickerProviderStateMixin {
-  final MobileScannerController _scannerController = MobileScannerController(
-    detectionSpeed: DetectionSpeed.noDuplicates,
-    returnImage: false,
-  );
   late AnimationController _laserController;
-  bool _isTorchOn = false;
   bool _hasScanned = false;
 
   @override
@@ -32,20 +26,7 @@ class _QrScannerViewState extends State<QrScannerView>
   @override
   void dispose() {
     _laserController.dispose();
-    _scannerController.dispose();
     super.dispose();
-  }
-
-  void _onDetect(BarcodeCapture capture) {
-    if (_hasScanned) return;
-    final barcodes = capture.barcodes;
-    for (final barcode in barcodes) {
-      final rawValue = barcode.rawValue;
-      if (rawValue != null && rawValue.isNotEmpty) {
-        _handleQrResult(rawValue);
-        break;
-      }
-    }
   }
 
   void _handleQrResult(String rawData) {
@@ -166,72 +147,50 @@ class _QrScannerViewState extends State<QrScannerView>
             letterSpacing: 1.0,
           ),
         ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              _isTorchOn ? Icons.flash_on_rounded : Icons.flash_off_rounded,
-              color: _isTorchOn ? AppColors.goldenYellow : AppColors.textSecondary,
-            ),
-            onPressed: () async {
-              await _scannerController.toggleTorch();
-              setState(() {
-                _isTorchOn = !_isTorchOn;
-              });
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.flip_camera_ios_rounded, color: AppColors.textSecondary),
-            onPressed: () => _scannerController.switchCamera(),
-          ),
-        ],
       ),
       body: SizedBox.expand(
         child: Stack(
           fit: StackFit.expand,
           children: [
-            // 1. Fullscreen Camera View (Anchored Full Viewport)
+            // Camera placeholder for web
             Positioned.fill(
-              child: MobileScanner(
-                controller: _scannerController,
-                fit: BoxFit.cover,
-                onDetect: _onDetect,
-                errorBuilder: (context, error) {
-                  return Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Icon(
-                            Icons.camera_alt_outlined,
-                            size: 48,
-                            color: AppColors.textSecondary,
+              child: Container(
+                color: const Color(0xFF0C0D10),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(
+                          Icons.camera_alt_outlined,
+                          size: 48,
+                          color: AppColors.textSecondary,
+                        ),
+                        const SizedBox(height: 12),
+                        const Text(
+                          'Camera scanning is available on the mobile app.\nUse a demo QR below or paste a UPI link.',
+                          style: TextStyle(color: AppColors.textSecondary),
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: 16),
+                        ElevatedButton.icon(
+                          onPressed: _showManualEntryDialog,
+                          icon: const Icon(Icons.paste_rounded, color: Colors.black, size: 16),
+                          label: const Text('Paste UPI Link / Demo Data'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.primaryGreen,
+                            foregroundColor: Colors.black,
                           ),
-                          const SizedBox(height: 12),
-                          const Text(
-                            'Camera unavailable on this device/platform.',
-                            style: TextStyle(color: AppColors.textSecondary),
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(height: 16),
-                          ElevatedButton.icon(
-                            onPressed: _showManualEntryDialog,
-                            icon: const Icon(Icons.paste_rounded, color: Colors.black, size: 16),
-                            label: const Text('Paste UPI Link / Demo Data'),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: AppColors.primaryGreen,
-                              foregroundColor: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  );
-                },
+                  ),
+                ),
               ),
             ),
 
-            // 2. Translucent Mask with Centered Cutout
+            // Translucent Mask with Centered Cutout
             Positioned.fill(
               child: CustomPaint(
                 painter: _ScannerOverlayPainter(
@@ -241,14 +200,13 @@ class _QrScannerViewState extends State<QrScannerView>
               ),
             ),
 
-            // 3. Mathematical Center Viewfinder & Laser (Frame 0 Anchored)
+            // Mathematical Center Viewfinder & Laser
             Center(
               child: SizedBox(
                 width: 260,
                 height: 260,
                 child: Stack(
                   children: [
-                    // Corner Brackets
                     Positioned.fill(
                       child: Container(
                         decoration: BoxDecoration(
@@ -256,8 +214,6 @@ class _QrScannerViewState extends State<QrScannerView>
                         ),
                       ),
                     ),
-
-                    // Animated Smooth Laser Line
                     AnimatedBuilder(
                       animation: _laserController,
                       builder: (context, child) {
@@ -267,9 +223,9 @@ class _QrScannerViewState extends State<QrScannerView>
                           right: 8,
                           child: Container(
                             height: 2.5,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: AppColors.primaryGreen,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   color: AppColors.primaryGreen,
                                   blurRadius: 8,
@@ -286,7 +242,7 @@ class _QrScannerViewState extends State<QrScannerView>
               ),
             ),
 
-            // 4. Bottom Hint & Demo Shortcuts
+            // Bottom Hint & Demo Shortcuts
             Positioned(
               bottom: 30,
               left: 20,
@@ -301,7 +257,7 @@ class _QrScannerViewState extends State<QrScannerView>
                       border: Border.all(color: const Color(0xFF27272A)),
                     ),
                     child: const Text(
-                      'ALIGN MERCHANT QR WITHIN THE FRAME',
+                      'USE DEMO QR OR PASTE UPI LINK',
                       style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.w900,

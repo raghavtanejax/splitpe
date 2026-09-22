@@ -6,7 +6,6 @@ import '../models/tranche.dart';
 import '../services/split_engine.dart';
 import '../theme/app_theme.dart';
 import '../widgets/mesh_background.dart';
-import '../widgets/glass_components.dart';
 import '../widgets/qr_tranche_card.dart';
 
 class GroupSplitView extends StatefulWidget {

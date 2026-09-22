@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/foundation.dart';
-import 'package:screenshot/screenshot.dart';
+
 import '../models/split_order.dart';
 import '../theme/app_theme.dart';
 
@@ -25,19 +25,17 @@ class CloutShareModal extends StatefulWidget {
 }
 
 class _CloutShareModalState extends State<CloutShareModal> {
-  final ScreenshotController _screenshotController = ScreenshotController();
   bool _isSharing = false;
 
-  Future<void> _shareImage() async {
+  Future<void> _shareText() async {
     setState(() => _isSharing = true);
     try {
-      final image = await _screenshotController.capture(pixelRatio: 3.0);
-      if (image != null) {
-        final xFile = XFile.fromData(image, name: 'receipt.png', mimeType: 'image/png');
-        await Share.shareXFiles([xFile], text: 'Check out my 0% MDR SplitPe Receipt!');
-      }
+      final text = '🔥 Settled ₹${widget.order.totalAmount.toStringAsFixed(0)} with ₹0 MDR using SplitPe!\n'
+          '⚡ ${widget.order.tranches.length} sub-₹2,000 tranches · Saved ₹${widget.order.mdrSavings.toStringAsFixed(2)}\n'
+          '#SplitPe #ZeroMDR #UPI';
+      await Share.share(text);
     } catch (e) {
-      debugPrint('Error sharing image: $e');
+      debugPrint('Error sharing: $e');
     } finally {
       if (mounted) setState(() => _isSharing = false);
     }
@@ -124,9 +122,7 @@ class _CloutShareModalState extends State<CloutShareModal> {
             const SizedBox(height: 18),
 
             // Receipt Container with Banknote Watermark
-            Screenshot(
-              controller: _screenshotController,
-              child: Container(
+            Container(
                 decoration: BoxDecoration(
                   color: isDark ? const Color(0xFF1A1A1E) : const Color(0xFFF8FAFC),
                   borderRadius: BorderRadius.circular(16),
@@ -297,7 +293,6 @@ class _CloutShareModalState extends State<CloutShareModal> {
                 ],
               ),
             ),
-          ),
 
             const SizedBox(height: 20),
 
@@ -332,7 +327,7 @@ class _CloutShareModalState extends State<CloutShareModal> {
                   child: SizedBox(
                     height: 44,
                     child: ElevatedButton.icon(
-                      onPressed: _isSharing ? null : _shareImage,
+                      onPressed: _isSharing ? null : _shareText,
                       icon: _isSharing 
                           ? const SizedBox(width: 14, height: 14, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
                           : const Icon(Icons.share_rounded, size: 14, color: Colors.white),
