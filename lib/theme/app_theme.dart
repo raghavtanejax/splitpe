@@ -7,9 +7,20 @@ class AppColors {
   static const Color primaryBlueDark = Color(0xFF005BB5); // Darker Blue
   static const Color primaryGreen = Color(0xFF34C759); // Apple System Green
   static const Color alertRed = Color(0xFFFF3B30); // Apple System Red
+  static const Color neonCyan = Color(0xFF00E5FF); // Electric Cyan
   
   static const Color darkBackground = Color(0xFF000000); // Deep Black
   static const Color lightBackground = Color(0xFFF2F2F7); // Apple System Gray 6
+
+  // Legacy Aliases used in older views
+  static const Color background = darkBackground;
+  static const Color surface = Color(0xFF1C1C1E);
+  static const Color blueSurface = Color(0xFF002244);
+  static const Color lightSurfaceElevated = Color(0xFFFFFFFF);
+  static const Color lightTextMuted = Color(0xFF8E8E93);
+  static const Color goldenYellow = Color(0xFFFFD60A);
+  static const Color textPrimary = Color(0xFFFFFFFF);
+  static const Color textSecondary = Color(0x99FFFFFF); // White60
 
   // Glass Container Colors (Context Aware)
   static Color glassBg(BuildContext context) => ThemeController.isDark(context)
