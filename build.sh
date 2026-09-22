@@ -1,0 +1,9 @@
+#!/bin/bash
+git config --global --add safe.directory '*'
+if [ ! -d "flutter" ]; then
+  git clone https://github.com/flutter/flutter.git -b stable --depth 1
+fi
+export PATH="$PATH:$PWD/flutter/bin"
+flutter config --no-analytics
+flutter pub get
+flutter build web --release --base-href "/"
