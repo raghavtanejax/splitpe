@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class AppColors {
   // Glassmorphism Core Palette
   static const Color primaryBlue = Color(0xFF007AFF); // Apple System Blue
+  static const Color primaryBlueDark = Color(0xFF005BB5); // Darker Blue
   static const Color primaryGreen = Color(0xFF34C759); // Apple System Green
   static const Color alertRed = Color(0xFFFF3B30); // Apple System Red
   

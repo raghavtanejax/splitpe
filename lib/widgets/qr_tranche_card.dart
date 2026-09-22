@@ -33,7 +33,12 @@ class QrTrancheCard extends StatelessWidget {
         color: isPaid
             ? (isDark ? const Color(0xFF0E1E38) : const Color(0xFFF0F7FF))
             : AppColors.cardBg(context),
-        
+        border: Border.all(
+          color: isPaid
+              ? AppColors.primaryBlue
+              : isCurrentActive
+                  ? AppColors.primaryBlueDark
+                  : AppColors.border(context),
           width: isCurrentActive || isPaid ? 2.0 : 1.5,
         ),
         boxShadow: [
