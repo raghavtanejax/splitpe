@@ -83,7 +83,7 @@ class _SavingsCalculatorViewState extends State<SavingsCalculatorView> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w900,
-                    color: AppColors.text(context),
+                    color: AppColors.text,
                     letterSpacing: -0.5,
                   ),
                 ),
@@ -112,7 +112,7 @@ class _SavingsCalculatorViewState extends State<SavingsCalculatorView> {
                         fontSize: 10,
                         fontWeight: FontWeight.w900,
                         letterSpacing: 1.0,
-                        color: AppColors.textSub(context),
+                        color: AppColors.textSub,
                       ),
                     ),
                     Text(
@@ -159,7 +159,7 @@ class _SavingsCalculatorViewState extends State<SavingsCalculatorView> {
                         fontSize: 10,
                         fontWeight: FontWeight.w900,
                         letterSpacing: 1.0,
-                        color: AppColors.textSub(context),
+                        color: AppColors.textSub,
                       ),
                     ),
                     Text(
@@ -315,7 +315,7 @@ class _SavingsCalculatorViewState extends State<SavingsCalculatorView> {
                         style: TextStyle(
                           fontSize: 10,
                           fontWeight: FontWeight.w700,
-                          color: AppColors.text(context),
+                          color: AppColors.text,
                         ),
                       ),
                     ],
@@ -360,7 +360,7 @@ class _SavingsCalculatorViewState extends State<SavingsCalculatorView> {
                     fontSize: 13,
                     height: 1.4,
                     fontWeight: FontWeight.w700,
-                    color: AppColors.text(context),
+                    color: AppColors.text,
                   ),
                 ),
               ],

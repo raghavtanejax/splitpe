@@ -102,7 +102,7 @@ class _GroupSplitViewState extends State<GroupSplitView> {
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.w900,
-                        color: AppColors.text(context),
+                        color: AppColors.text,
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -113,7 +113,7 @@ class _GroupSplitViewState extends State<GroupSplitView> {
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w900,
-                          color: AppColors.text(context),
+                          color: AppColors.text,
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -140,7 +140,7 @@ class _GroupSplitViewState extends State<GroupSplitView> {
                         fontSize: 11,
                         fontWeight: FontWeight.w900,
                         letterSpacing: 1.0,
-                        color: AppColors.textSub(context),
+                        color: AppColors.textSub,
                       ),
                     ),
                     Row(
@@ -161,7 +161,7 @@ class _GroupSplitViewState extends State<GroupSplitView> {
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(8),
-                            child: Icon(Icons.remove, size: 16, color: AppColors.text(context)),
+                            child: Icon(Icons.remove, size: 16, color: AppColors.text),
                           ),
                         ),
                         Container(
@@ -196,7 +196,7 @@ class _GroupSplitViewState extends State<GroupSplitView> {
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(8),
-                            child: Icon(Icons.add, size: 16, color: AppColors.text(context)),
+                            child: Icon(Icons.add, size: 16, color: AppColors.text),
                           ),
                         ),
                       ],
@@ -227,7 +227,7 @@ class _GroupSplitViewState extends State<GroupSplitView> {
                 fontSize: 11,
                 fontWeight: FontWeight.w900,
                 letterSpacing: 1.2,
-                color: AppColors.textSub(context),
+                color: AppColors.textSub,
               ),
             ),
             const SizedBox(height: 10),

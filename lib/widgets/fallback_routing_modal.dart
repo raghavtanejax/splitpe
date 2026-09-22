@@ -65,7 +65,7 @@ class FallbackRoutingModal extends StatelessWidget {
             'We couldn\\'t open your default UPI app. Try forcing the payment through a specific app below:',
             style: TextStyle(
               fontSize: 14,
-              color: AppColors.text(context),
+              color: AppColors.text,
               height: 1.4,
             ),
           ),
@@ -76,7 +76,7 @@ class FallbackRoutingModal extends StatelessWidget {
           const SizedBox(height: 12),
           _buildAppButton(context, 'Paytm', 'paytmmp://pay', const Color(0xFF00B9F5)),
           const SizedBox(height: 12),
-          _buildAppButton(context, 'Copy Link', null, AppColors.text(context)),
+          _buildAppButton(context, 'Copy Link', null, AppColors.text),
           SizedBox(height: MediaQuery.of(context).padding.bottom + 10),
         ],
       ),

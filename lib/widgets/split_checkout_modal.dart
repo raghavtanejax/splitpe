@@ -174,7 +174,7 @@ class _SplitCheckoutDialogState extends State<SplitCheckoutDialog> {
                                     style: TextStyle(
                                       fontSize: 10,
                                       fontWeight: FontWeight.w700,
-                                      color: AppColors.textSub(context),
+                                      color: AppColors.textSub,
                                       letterSpacing: 0.5,
                                     ),
                                   ),
@@ -183,7 +183,7 @@ class _SplitCheckoutDialogState extends State<SplitCheckoutDialog> {
                             ),
                             IconButton(
                               onPressed: () => Navigator.pop(context),
-                              icon: Icon(Icons.close_rounded, color: AppColors.textSub(context), size: 20),
+                              icon: Icon(Icons.close_rounded, color: AppColors.textSub, size: 20),
                               padding: EdgeInsets.zero,
                               constraints: const BoxConstraints(),
                             ),
@@ -233,7 +233,7 @@ class _SplitCheckoutDialogState extends State<SplitCheckoutDialog> {
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w700,
-                              color: AppColors.text(context),
+                              color: AppColors.text,
                             ),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
@@ -286,7 +286,7 @@ class _SplitCheckoutDialogState extends State<SplitCheckoutDialog> {
                             style: TextStyle(
                               fontSize: 32,
                               fontWeight: FontWeight.w900,
-                              color: AppColors.text(context),
+                              color: AppColors.text,
                               letterSpacing: -1.0,
                             ),
                           ),
@@ -339,7 +339,7 @@ class _SplitCheckoutDialogState extends State<SplitCheckoutDialog> {
                               child: Text(
                                 'Mark as Paid (Demo)',
                                 style: TextStyle(
-                                  color: AppColors.textSub(context),
+                                  color: AppColors.textSub,
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -412,7 +412,7 @@ class _SplitCheckoutDialogState extends State<SplitCheckoutDialog> {
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w800,
-                              color: AppColors.text(context),
+                              color: AppColors.text,
                             ),
                           ),
                           const SizedBox(height: 4),
@@ -421,7 +421,7 @@ class _SplitCheckoutDialogState extends State<SplitCheckoutDialog> {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 12,
-                              color: AppColors.textSub(context),
+                              color: AppColors.textSub,
                               height: 1.4,
                             ),
                           ),
@@ -453,7 +453,7 @@ class _SplitCheckoutDialogState extends State<SplitCheckoutDialog> {
                             onPressed: () => Navigator.pop(context),
                             child: Text(
                               'Done',
-                              style: TextStyle(color: AppColors.textSub(context), fontSize: 13, fontWeight: FontWeight.w600),
+                              style: TextStyle(color: AppColors.textSub, fontSize: 13, fontWeight: FontWeight.w600),
                             ),
                           ),
                         ],

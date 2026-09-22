@@ -35,18 +35,10 @@ class AppColors {
       ? Colors.black.withAlpha(100)
       : Colors.black.withAlpha(15);
 
-  // Text Colors
-  static Color text(BuildContext context) => ThemeController.isDark(context)
-      ? Colors.white
-      : Colors.black87;
-
-  static Color textSub(BuildContext context) => ThemeController.isDark(context)
-      ? Colors.white60
-      : Colors.black54;
-
-  static Color textMuted(BuildContext context) => ThemeController.isDark(context)
-      ? Colors.white38
-      : Colors.black38;
+  // Text Colors (static const for broad compatibility)
+  static const Color text = Color(0xFFFFFFFF); // White
+  static const Color textSub = Color(0x99FFFFFF); // White60
+  static const Color textMuted = Color(0x61FFFFFF); // White38
 
   // Aliases for compatibility with old views
   static Color bg(BuildContext context) => ThemeController.isDark(context)

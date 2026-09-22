@@ -173,14 +173,14 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                       fontSize: 13,
                       fontWeight: FontWeight.w900,
                       letterSpacing: 1.2,
-                      color: AppColors.text(context),
+                      color: AppColors.text,
                     ),
                   ),
                   IconButton(
                     onPressed: () => Navigator.pop(ctx),
                     icon: Icon(
                       Icons.close,
-                      color: AppColors.textSub(context),
+                      color: AppColors.textSub,
                       size: 20,
                     ),
                     padding: EdgeInsets.zero,
@@ -219,7 +219,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w800,
-                    color: AppColors.text(context),
+                    color: AppColors.text,
                   ),
                   decoration: const InputDecoration(
                     hintText: 'e.g. guptakirana@okhdfcbank',
@@ -312,7 +312,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
-                    color: AppColors.text(context),
+                    color: AppColors.text,
                   ),
                   decoration: const InputDecoration(
                     hintText: 'e.g. Gupta Kirana Store',
@@ -348,7 +348,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                       Icon(
                         Icons.qr_code_scanner,
                         size: 16,
-                        color: AppColors.text(context),
+                        color: AppColors.text,
                       ),
                       const SizedBox(width: 8),
                       Text(
@@ -357,7 +357,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                           fontSize: 11,
                           fontWeight: FontWeight.w900,
                           letterSpacing: 0.8,
-                          color: AppColors.text(context),
+                          color: AppColors.text,
                         ),
                       ),
                     ],
@@ -547,7 +547,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                                     fontWeight: FontWeight.w900,
                                     letterSpacing: 1.2,
                                     color: isVpaSet
-                                        ? AppColors.textSub(context)
+                                        ? AppColors.textSub
                                         : AppColors.primaryBlue,
                                   ),
                                 ),
@@ -560,7 +560,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                                     fontSize: 12,
                                     fontWeight: FontWeight.w900,
                                     color: isVpaSet
-                                        ? AppColors.text(context)
+                                        ? AppColors.text
                                         : AppColors.goldenYellow,
                                     letterSpacing: 0.5,
                                   ),
@@ -616,7 +616,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                             child: Text(
                               isVpaSet ? 'EDIT ▾' : 'ENTER ▾',
                               style: TextStyle(
-                                color: AppColors.text(context),
+                                color: AppColors.text,
                                 fontSize: 9,
                                 fontWeight: FontWeight.w900,
                                 letterSpacing: 0.8,
@@ -684,7 +684,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                                     fontSize: 10,
                                     fontWeight: FontWeight.w900,
                                     letterSpacing: 1.5,
-                                    color: AppColors.textSub(context),
+                                    color: AppColors.textSub,
                                   ),
                                 ),
                                 const Text(
@@ -707,7 +707,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                                   style: TextStyle(
                                     fontSize: 38,
                                     fontWeight: FontWeight.w900,
-                                    color: AppColors.text(context),
+                                    color: AppColors.text,
                                   ),
                                 ),
                                 const SizedBox(width: 8),
@@ -718,7 +718,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                                     style: TextStyle(
                                       fontSize: 38,
                                       fontWeight: FontWeight.w900,
-                                      color: AppColors.text(context),
+                                      color: AppColors.text,
                                       letterSpacing: -1.0,
                                     ),
                                     decoration: InputDecoration(
@@ -824,7 +824,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                                                     ? (isDark
                                                           ? Colors.black
                                                           : Colors.white)
-                                                    : AppColors.text(context),
+                                                    : AppColors.text,
                                               ),
                                             ),
                                             const SizedBox(width: 6),
@@ -878,7 +878,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                                 fontSize: 9,
                                 fontWeight: FontWeight.w900,
                                 letterSpacing: 1.2,
-                                color: AppColors.textSub(context),
+                                color: AppColors.textSub,
                               ),
                             ),
                             Text(
@@ -1027,7 +1027,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                                         fontSize: 9.5,
                                         fontWeight: FontWeight.w900,
                                         letterSpacing: 0.8,
-                                        color: AppColors.text(context),
+                                        color: AppColors.text,
                                       ),
                                     ),
                                     Text(
@@ -1067,7 +1067,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                                   fontSize: 9,
                                   fontWeight: FontWeight.w900,
                                   letterSpacing: 1.0,
-                                  color: AppColors.textSub(context),
+                                  color: AppColors.textSub,
                                 ),
                               ),
                               InkWell(
@@ -1126,7 +1126,7 @@ class PosCheckoutViewState extends State<PosCheckoutView> {
                                   style: TextStyle(
                                     fontSize: 10,
                                     fontWeight: FontWeight.w800,
-                                    color: AppColors.text(context),
+                                    color: AppColors.text,
                                   ),
                                 ),
                               );

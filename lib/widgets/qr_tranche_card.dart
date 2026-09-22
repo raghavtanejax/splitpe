@@ -70,7 +70,7 @@ class QrTrancheCard extends StatelessWidget {
                         : isCurrentActive
                             ? AppColors.primaryBlueDark
                             : (isDark ? const Color(0xFF27272A) : const Color(0xFFE2E8F0)),
-                    textColor: isPaid || isCurrentActive ? Colors.white : AppColors.text(context),
+                    textColor: isPaid || isCurrentActive ? Colors.white : AppColors.text,
                   ),
                   if (tranche.payerName != null) ...[
                     const SizedBox(width: 8),
@@ -79,7 +79,7 @@ class QrTrancheCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w700,
-                        color: AppColors.text(context),
+                        color: AppColors.text,
                       ),
                     ),
                   ],
@@ -160,7 +160,7 @@ class QrTrancheCard extends StatelessWidget {
                         fontSize: 10,
                         fontWeight: FontWeight.w800,
                         letterSpacing: 1.0,
-                        color: AppColors.textSub(context),
+                        color: AppColors.textSub,
                       ),
                     ),
                     const SizedBox(height: 2),
@@ -169,7 +169,7 @@ class QrTrancheCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w900,
-                        color: isPaid ? AppColors.primaryBlue : AppColors.text(context),
+                        color: isPaid ? AppColors.primaryBlue : AppColors.text,
                         letterSpacing: -0.5,
                       ),
                     ),

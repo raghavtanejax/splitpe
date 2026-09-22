@@ -82,7 +82,7 @@ class _SoundboxSpeakerWidgetState extends State<SoundboxSpeakerWidget>
                   : Icons.speaker_outlined,
               color: hasAnnouncement
                   ? AppColors.primaryBlue
-                  : AppColors.textSub(context),
+                  : AppColors.textSub,
               size: 18,
             ),
           ),
@@ -138,8 +138,8 @@ class _SoundboxSpeakerWidgetState extends State<SoundboxSpeakerWidget>
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                     color: hasAnnouncement
-                        ? AppColors.text(context)
-                        : AppColors.textSub(context),
+                        ? AppColors.text
+                        : AppColors.textSub,
                   ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,

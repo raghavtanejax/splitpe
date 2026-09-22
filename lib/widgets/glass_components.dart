@@ -162,7 +162,7 @@ class GlassBadge extends StatelessWidget {
               fontSize: 10,
               fontWeight: FontWeight.w600,
               letterSpacing: 0.5,
-              color: textColor ?? AppColors.text(context),
+              color: textColor ?? AppColors.text,
             ),
           ),
         ),

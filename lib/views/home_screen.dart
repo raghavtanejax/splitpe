@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: _handleTopBarScan,
             icon: Icon(
               Icons.qr_code_scanner_rounded,
-              color: AppColors.text(context),
+              color: AppColors.text,
               size: 22,
             ),
             tooltip: 'Scan Merchant QR',
@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
             NavigationDestination(
               icon: Icon(
                 Icons.point_of_sale_outlined,
-                color: AppColors.textSub(context),
+                color: AppColors.textSub,
               ),
               selectedIcon: const Icon(
                 Icons.point_of_sale_rounded,
@@ -125,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
             NavigationDestination(
               icon: Icon(
                 Icons.group_outlined,
-                color: AppColors.textSub(context),
+                color: AppColors.textSub,
               ),
               selectedIcon: const Icon(
                 Icons.group_rounded,
@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
             NavigationDestination(
               icon: Icon(
                 Icons.calculate_outlined,
-                color: AppColors.textSub(context),
+                color: AppColors.textSub,
               ),
               selectedIcon: const Icon(
                 Icons.calculate_rounded,
@@ -183,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 16,
-                      color: AppColors.text(context),
+                      color: AppColors.text,
                     ),
                   ),
                 ],
@@ -196,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(
                   fontSize: 12,
                   height: 1.5,
-                  color: AppColors.textSub(context),
+                  color: AppColors.textSub,
                 ),
               ),
               const SizedBox(height: 14),

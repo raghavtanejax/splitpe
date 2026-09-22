@@ -105,14 +105,14 @@ class _CloutShareModalState extends State<CloutShareModal> {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
-                        color: AppColors.text(context),
+                        color: AppColors.text,
                       ),
                     ),
                   ],
                 ),
                 IconButton(
                   onPressed: () => Navigator.pop(context),
-                  icon: Icon(Icons.close_rounded, color: AppColors.textSub(context), size: 20),
+                  icon: Icon(Icons.close_rounded, color: AppColors.textSub, size: 20),
                   padding: EdgeInsets.zero,
                   constraints: const BoxConstraints(),
                 ),
@@ -178,7 +178,7 @@ class _CloutShareModalState extends State<CloutShareModal> {
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w700,
-                                      color: AppColors.text(context),
+                                      color: AppColors.text,
                                     ),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
@@ -220,11 +220,11 @@ class _CloutShareModalState extends State<CloutShareModal> {
                           children: [
                             Text(
                               'Total Settled',
-                              style: TextStyle(fontSize: 12, color: AppColors.textSub(context), fontWeight: FontWeight.w500),
+                              style: TextStyle(fontSize: 12, color: AppColors.textSub, fontWeight: FontWeight.w500),
                             ),
                             Text(
                               '₹${widget.order.totalAmount.toStringAsFixed(2)}',
-                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: AppColors.text(context)),
+                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: AppColors.text),
                             ),
                           ],
                         ),
